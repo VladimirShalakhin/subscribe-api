@@ -11,6 +11,15 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Rubric newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Rubric newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Rubric query()
+ *
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Email> $emails
+ * @property-read int|null $emails_count
+ * @property int $id Идентификатор рубрики
+ * @property string $name Название рубрики
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|Rubric whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Rubric whereName($value)
+ *
  * @mixin \Eloquent
  */
 class Rubric extends Model

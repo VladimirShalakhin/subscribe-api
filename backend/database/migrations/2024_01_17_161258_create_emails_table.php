@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('emails', function (Blueprint $table) {
             $table->id()->comment('Идентификатор почтового адреса');
-            $table->string('address', 256)->comment('Адрес электронной почты');
-            $table->boolean('main')->comment('Является ли данный почтовый адрес основным');
-            $table->boolean('verified')->comment('Является ли данный почтовый адрес подтвержденным');
-            $table->integer('user_id')->comment('Идентификатор пользователя, которому принадлежит данный почтовый адрес');
+            $table->string('value', 256)->unique()->comment('Адрес электронной почты');
+            $table->boolean('main')->default(false)->comment('Является ли данный почтовый адрес основным');
+            $table->boolean('verified')->default(false)->comment('Является ли данный почтовый адрес подтвержденным');
+            $table->integer('user_id')->nullable()->comment('Идентификатор пользователя, которому принадлежит данный почтовый адрес');
+            $table->text('token')->nullable()->comment('Токен для подтверждения подписи почтового адреса');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }

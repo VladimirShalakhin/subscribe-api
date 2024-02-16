@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id()->comment('Идентификатор пользователя');
             $table->string('name', 256)->comment('Имя пользователя');
             $table->string('password', 256)->comment('Пароль пользователя в захэшированном виде');
-            $table->string('remember_token', 256)->comment('Значение токена');
         });
     }
 

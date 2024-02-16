@@ -12,12 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('email_rubric', function (Blueprint $table) {
-            $table->foreignId('email_id')->comment('Идентификатор почтового адреса из таблицы emails');
-            $table->foreignId('rubric_id')->comment('идентификатор рубрики из таблицы rubrics');
-            $table->timestamp('subscribed_at' ,0)->comment('Дата, когда была выполнена подписка на данную рубрику');
+            $table->integer('email_id')->comment('Идентификатор почтового адреса из таблицы emails');
+            $table->integer('rubric_id')->comment('Идентификатор рубрики из таблицы rubrics');
+            $table->timestamp('confirmed_at', 0)->nullable()->comment('Дата, когда было выполнено подтверждение подписки на данную рубрику');
             $table->primary(['email_id', 'rubric_id']);
-            $table->foreign('email_id')->references('id')->on('emails')->onDelete('cascade');
-            $table->foreign('rubric_id')->references('id')->on('rubrics')->onDelete('cascade');
+            $table->text('token')->nullable()->comment('Токен для подтверждения подписи на рубрику');
+            $table->foreign('email_id')->references('id')->on('emails')->onDelete('cascade')->comment('Идентификатор почтового адреса из таблицы emails');
+            $table->foreign('rubric_id')->references('id')->on('rubrics')->onDelete('cascade')->comment('идентификатор рубрики из таблицы rubrics');
         });
     }
 
