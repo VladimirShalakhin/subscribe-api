@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "6ab27967-b392-45f6-bfa4-957378c0f4db",
+		"name": "subscribe-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31789493"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "backend.laravel-app-subscription.local/api/register?name=test&password=Password123!3434&value=test@yandex.ru",
+					"host": [
+						"backend",
+						"laravel-app-subscription",
+						"local"
+					],
+					"path": [
+						"api",
+						"register"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "test"
+						},
+						{
+							"key": "password",
+							"value": "Password123!3434"
+						},
+						{
+							"key": "value",
+							"value": "test@yandex.ru"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "backend.laravel-app-subscription.local/api/login?password=Password123!3434&value=mr.shalakhin@yandex.ru",
+					"host": [
+						"backend",
+						"laravel-app-subscription",
+						"local"
+					],
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "password",
+							"value": "Password123!3434"
+						},
+						{
+							"key": "value",
+							"value": "mr.shalakhin@yandex.ru"
+						},
+						{
+							"key": "value",
+							"value": "test4@yandex.ru",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYmFja2VuZC5sYXJhdmVsLWFwcC1zdWJzY3JpcHRpb24ubG9jYWwvYXBpL2xvZ2luIiwiaWF0IjoxNzA2ODE5NjM3LCJleHAiOjE3MDY4MjMyMzcsIm5iZiI6MTcwNjgxOTYzNywianRpIjoiQ2Q2alhXdElYV3F5dkFUdSIsInN1YiI6IjEzIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.P1OJr_vn7siUFXYTZW_JS1TJqd4waGTlrynijakvLc0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "backend.laravel-app-subscription.local/api/refresh",
+					"host": [
+						"backend",
+						"laravel-app-subscription",
+						"local"
+					],
+					"path": [
+						"api",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYmFja2VuZC5sYXJhdmVsLWFwcC1zdWJzY3JpcHRpb24ubG9jYWwvYXBpL3JlZnJlc2giLCJpYXQiOjE3MDY4MTk2MzcsImV4cCI6MTcwNjgyMzI1NCwibmJmIjoxNzA2ODE5NjU0LCJqdGkiOiJjT2VKSkwzN3RhcEs0eW1WIiwic3ViIjoiMTMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.fSHULbbTpZbqAmkKXAKY_x6-QO3eDheTIvjON2zRXIo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "backend.laravel-app-subscription.local/api/logout",
+					"host": [
+						"backend",
+						"laravel-app-subscription",
+						"local"
+					],
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user-profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYmFja2VuZC5sYXJhdmVsLWFwcC1zdWJzY3JpcHRpb24ubG9jYWwvYXBpL2xvZ2luIiwiaWF0IjoxNzA2ODIwMDg1LCJleHAiOjE3MDY4MjM2ODUsIm5iZiI6MTcwNjgyMDA4NSwianRpIjoiNVM4aVJCTXJiVEtZaTRIYyIsInN1YiI6IjEwIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.u8Hkh8CeSEB_6Pw_30VCGpj1M1ie12txnPUG6XEzE8Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "backend.laravel-app-subscription.local/api/user-profile",
+					"host": [
+						"backend",
+						"laravel-app-subscription",
+						"local"
+					],
+					"path": [
+						"api",
+						"user-profile"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
